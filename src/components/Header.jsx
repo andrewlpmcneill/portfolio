@@ -1,19 +1,27 @@
 import React from 'react'
 
 export default function Header() {
+
   return (
-    <>
-      <h1 className='header-title'>
+
+    <header>
+      <h1 className='title'>
         A developer who cares about detail.
       </h1>
-      <div className='header-links'>
-        <a className='header-link header-link-reach' href='/contact'>
-          <h2 className='header-link-title'>Reach Out →</h2>
+      <div className='links'>
+        <a className='link link-reach' href='/contact'>
+          <h2 className='link-title'>
+            Reach Out →
+          </h2>
         </a>
-        <a className='header-link header-link-view' href='/projects'>
-          <h2 className='header-link-title'>View Projects ↓</h2>
+        <a className='link link-view' href='/projects'>
+          <h2 className='link-title'>
+            View Projects ↓
+          </h2>
         </a>
       </div>
-    </>
+    </header>
+  
   )
+
 }
