@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { AiFillGithub, AiFillLinkedin } from 'react-icons/ai';
 import Dropdown from './Nav.Dropdown';
 import Hamburger from './Nav.hamburger';
-import { Header, Navbar, Div, HamburgerWrapper, TitleLink, Link, LinkIcon, H1, H2, NavbarWrapper } from './Nav.styles';
+import { Header, Navbar, Div, HamburgerWrapper, TitleLink, Link, LinkIcon, H1, H2, Span, NavbarWrapper } from './Nav.styles';
 
 export default function Nav() {
 
@@ -18,8 +18,10 @@ export default function Nav() {
             <H1>
               ANDREW
             </H1>
-            <H1 clr={true}>
-              MC
+            <H1>
+              <Span>
+                MC
+              </Span>
             </H1>
           </TitleLink>
           <Div>
