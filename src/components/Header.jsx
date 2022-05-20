@@ -1,26 +1,29 @@
-import React from 'react'
+import React from 'react';
+import { StyledHeader, H1, Span, Links, Link } from './Header.styles';
 
 export default function Header() {
 
   return (
 
-    <header>
-      <h1 className='title'>
-        A developer who <br /><span className='title-coloured'>cares about detail.</span>
-      </h1>
-      <div className='links'>
-        <a className='link link-reach' href='/contact'>
-          <h2 className='link-title'>
-            Reach Out →
-          </h2>
-        </a>
-        <a className='link link-view' href='/projects'>
-          <h2 className='link-title'>
-            View Projects ↓
-          </h2>
-        </a>
-      </div>
-    </header>
+    <StyledHeader>
+      <H1>
+        A developer who <br /><Span>cares about detail.</Span>
+      </H1>
+      <Links >
+        <Link
+          href='/contact'
+          reach={true}
+        >
+          Reach Out →
+        </Link>
+        <Link
+          href='/projects'
+          reach={false}
+        >
+          View Projects ↓
+        </Link>
+      </Links>
+    </StyledHeader>
   
   )
 
