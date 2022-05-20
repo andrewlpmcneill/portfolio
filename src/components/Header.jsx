@@ -6,7 +6,7 @@ export default function Header() {
 
     <header>
       <h1 className='title'>
-        A developer who cares about detail.
+        A developer who <br /><span className='title-coloured'>cares about detail.</span>
       </h1>
       <div className='links'>
         <a className='link link-reach' href='/contact'>
