@@ -40,14 +40,31 @@ export const HamburgerWrapper = styled.div`
 `
 
 export const H1 = styled.h1`
-  color: ${props => props.clr ? "red" : "white"};
+  color: #f3f4f6;
   font-weight: 700;
+  letter-spacing: -1px;
 `;
 
 export const H2 = styled.h2`
   color: #6b7280;
   font-size: 16px;
   font-weight: 400;
+`;
+
+export const Span = styled.span`
+  background: linear-gradient(270deg, #ed4546 0%, #4180f0 50%, #ed4546 100%);
+  background: -webkit-linear-gradient(to right, #ed4546 0%, #4180f0 50%, #ed4546 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% auto;
+  animation: shine 5s linear infinite;
+  animation-direction: reverse;
+  @keyframes shine {
+    to {
+      background-position: 200% center;
+    }
+  }
 `;
 
 export const TitleLink = styled.a`
@@ -64,7 +81,7 @@ export const Link = styled.a`
 `;
 
 export const LinkIcon = styled.a`
-  color: white;
+  color: #f3f4f6;
   font-size: 24px;
   padding-top: 5px;
 `;
