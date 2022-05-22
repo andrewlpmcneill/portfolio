@@ -32,6 +32,16 @@ export const H1 = styled.h1`
   font-weight: 800;
 `;
 
+export const H2 = styled.h2`
+  color: #9ca3af;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  margin-top: 1.5rem;
+  margin-bottom: 0;
+`;
+
 export const Span = styled.span`
   background: -webkit-linear-gradient(0deg, #ed4546, #4180f0);
   -webkit-background-clip: text;
@@ -45,7 +55,7 @@ export const Links = styled.div`
     width: 576px;
     justify-content: center;
     gap: 0.7rem;
-    margin: 5rem 0 5rem 0;
+    margin: 2rem 0 6rem 0;
   }
   @media (max-width: 639px) {
     width: 91%;
