@@ -11,7 +11,7 @@ export const StyledHeader = styled.header`
 
 export const H1 = styled.h1`
   color: #f3f4f6;
-  margin: 63px 0 0 0;
+  margin: 8rem 0 0 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   @media (min-width: 1024px) {
     font-size: 96px;
