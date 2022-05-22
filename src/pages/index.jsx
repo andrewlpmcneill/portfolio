@@ -7,7 +7,7 @@ import Express from '../assets/express.svg';
 import RubyOnRails from '../assets/rubyonrails.svg';
 import PostgreSQL from '../assets/postgresql.svg';
 import MongoDB from '../assets/mongodb.svg';
-import { Main, Technologies, Technology, Introduction, H1, P, Section } from '../components/index.styles';
+import { Main, Technologies, Technology, Introduction, H1, H2, P, Section, A } from '../components/index.styles';
 
 export default function Home() {
 
@@ -15,9 +15,12 @@ export default function Home() {
   
     <Layout>
       <Main>
+        <H2>
+          HIGHLIGHTED TECHNOLOGIES
+        </H2>
         <Technologies>
           <Technology>
-            <ReactJS height="32" width="120" viewBox="47 19 50 23"/>
+            <ReactJS height="32" width="120" viewBox="47 19 50 23" style={{marginTop: "2px"}}/>
           </Technology>
           <Technology>
             <Node height="32" width="120" viewBox="55 12 10 35" />
@@ -40,7 +43,7 @@ export default function Home() {
             Hey, I&apos;m Andrew.
           </H1>
           <P>
-            I&apos;m a full-stack web developer pivoting from seven years in sales, marketing, and operations leadership.<br />Recent Lighthouse Labs graduate with a focus on JavaScript, React, NodeJS, Express, PostgreSQL, Ruby and Rails.
+            I&apos;m a full-stack web developer pivoting from seven years in sales, marketing, and operations leadership.<br /><A href="https://www.lighthouselabs.ca/" target="_blank" rel="noreferrer">Lighthouse Labs</A>&nbsp;graduate with a focus on JavaScript, React, NodeJS, Express, PostgreSQL, Ruby, and Rails.
           </P>
         </Introduction>
         <Section>
