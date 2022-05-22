@@ -1,14 +1,21 @@
 import React from 'react';
-import { StyledHeader, H1, Span, Links, Link } from './Header.styles';
+import { StyledHeader, H1, H2, Span, Links, Link } from './Header.styles';
+import pattern from '../../static/pattern.svg';
 
 export default function Header() {
 
   return (
 
-    <StyledHeader>
+    <StyledHeader
+      // style={{backgroundImage: `url(${pattern})`}}
+      style={{backgroundImage: `linear-gradient(to bottom, rgba(17,17,17,0) 15%, rgba(17,17,17,1)), url(${pattern})`}}
+    >
       <H1>
         A developer who <br /><Span>cares about detail.</Span>
       </H1>
+      <H2>
+        Full-stack web developer based in Halifax, Nova Scotia, Canada.
+      </H2>
       <Links >
         <Link
           href='/contact'
