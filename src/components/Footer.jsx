@@ -12,8 +12,18 @@ export default function Footer() {
         <H1>
           Made by
         </H1>
-        <H1 color={true}>
+        <H1
+          color={true}
+        >
           Andrew McNeill
+        </H1>
+        <H1>
+          using
+        </H1>
+        <H1
+          color={true}
+        >
+          Gatsby
         </H1>
       </Title>
       <Links>
