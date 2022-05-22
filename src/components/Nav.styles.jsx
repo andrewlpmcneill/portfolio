@@ -25,7 +25,7 @@ export const Navbar = styled.nav`
 export const NavbarWrapper = styled.div`
   width: 100%;
   border-bottom: 1px solid #2a2a2a;
-`
+`;
 
 export const Div = styled.div`
   display: flex;
@@ -37,7 +37,7 @@ export const HamburgerWrapper = styled.div`
   @media (min-width: 767px) {
     display: none;
   }
-`
+`;
 
 export const H1 = styled.h1`
   color: #f3f4f6;
