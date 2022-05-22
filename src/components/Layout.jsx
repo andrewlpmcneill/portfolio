@@ -7,14 +7,20 @@ import './Layout.css'
 export default function Layout(props) {
 
   const {
-    children
+    children,
+    title,
+    page
   } = props;
 
   return (
 
     <>
-      <Nav />
-      <Header />
+      <Nav
+        page={page}
+      />
+      <Header
+        title={title}
+      />
       {children} 
       <Footer />
     </>
