@@ -71,7 +71,7 @@ export default function Skills() {
           <BsBookHalf />
         </Circle>
         <H2>
-          Not just a tool user
+          Not just frameworks
         </H2>
         <P>
           Committed to a life-long study of <A href="https://teachyourselfcs.com/" target="_blank" rel="noreferrer">computer science</A>.
