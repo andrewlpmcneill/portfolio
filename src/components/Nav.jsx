@@ -83,6 +83,7 @@ export default function Nav(props) {
       </NavbarWrapper>
       <Dropdown
         open={open}
+        page={page}
       />
     </Header>
   
