@@ -1,8 +1,12 @@
 import styled from 'styled-components';
 
 export const Header = styled.header`
-  background-color: #111111;
+  background-color: rgba(17, 17, 17, 0.8);
   width: 100%;
+  position: fixed;
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  z-index: 100;
 `;
 
 export const Navbar = styled.nav`
