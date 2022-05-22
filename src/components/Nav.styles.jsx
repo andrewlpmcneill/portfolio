@@ -50,7 +50,7 @@ export const H1 = styled.h1`
 `;
 
 export const H2 = styled.h2`
-  color: #6b7280;
+  color: ${props => props.page ? "#f3f4f6" : "#6b7280"};
   font-size: 16px;
   font-weight: 400;
 `;
