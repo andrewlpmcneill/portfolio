@@ -29,6 +29,8 @@ export default function Footer() {
       <Links>
         <Link
           href='https://www.gatsbyjs.com/'
+          target="_blank"
+          rel="noreferrer"
         >
           <H1>
             Gatsby <LinkIcon><RiGatsbyFill /></LinkIcon>
@@ -36,6 +38,8 @@ export default function Footer() {
         </Link>
         <Link
           href='https://github.com/andrewlpmcneill/portfolio'
+          target="_blank"
+          rel="noreferrer"
         >
           <H1>
             GitHub <LinkIcon><AiFillGithub /></LinkIcon>
