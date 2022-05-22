@@ -13,7 +13,9 @@ export default function Home() {
 
   return (
   
-    <Layout>
+    <Layout
+      title={true}
+    >
       <Main>
         <H2>
           HIGHLIGHTED TECHNOLOGIES
@@ -40,10 +42,10 @@ export default function Home() {
         </Technologies>
         <Introduction>
           <H1>
-            Hey, I&apos;m Andrew.
+            Hey, I&apos;m Andrew McNeill.
           </H1>
           <P>
-            I&apos;m a full-stack web developer pivoting from seven years in sales, marketing, and operations leadership.<br /><A href="https://www.lighthouselabs.ca/" target="_blank" rel="noreferrer">Lighthouse Labs</A>&nbsp;graduate with a focus on JavaScript, React, NodeJS, Express, PostgreSQL, Ruby, and Rails.
+            I&apos;m a full-stack web developer pivoting from seven years in sales, marketing, and operations leadership.<br />I&apos;m a&nbsp;<A href="https://www.lighthouselabs.ca/" target="_blank" rel="noreferrer">Lighthouse Labs</A>&nbsp;graduate with a focus on JavaScript, React, NodeJS, Express, PostgreSQL, Ruby, and Rails.
           </P>
         </Introduction>
         <Section>
