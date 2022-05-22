@@ -6,7 +6,9 @@ export default function Projects() {
 
   return (
 
-    <Layout>
+    <Layout
+      page='projects'
+    >
       <main>
         <h1 className='header-heading'>
           Projects
