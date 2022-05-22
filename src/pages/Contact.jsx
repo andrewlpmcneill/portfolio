@@ -5,7 +5,9 @@ export default function Contact() {
 
   return (
 
-    <Layout>
+    <Layout
+      page='contact'
+    >
       <main>
         <h1 className='heading'>
           Contact
