@@ -5,7 +5,11 @@ import Dropdown from './Nav.Dropdown';
 import Hamburger from './Nav.hamburger';
 import { Header, Navbar, Div, HamburgerWrapper, TitleLink, Link, LinkIcon, H1, H2, Span, NavbarWrapper } from './Nav.styles';
 
-export default function Nav() {
+export default function Nav(props) {
+
+  const {
+    page
+  } = props;
 
   const [open, setOpen] = useState(false);
   
@@ -30,21 +34,27 @@ export default function Nav() {
             <Link
               href='/about'
             >
-              <H2>
+              <H2
+                page={page === 'about' ? true : false}
+              >
                 About
               </H2>
             </Link>
             <Link
               href='/projects'
             >
-              <H2>
+              <H2
+                page={page === 'projects' ? true : false}
+              >
                 Projects
               </H2>
             </Link>
             <Link
               href='/contact'
             >
-              <H2>
+              <H2
+                page={page === 'contact' ? true : false}
+              >
                 Contact
               </H2>
             </Link>
