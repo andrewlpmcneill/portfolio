@@ -14,36 +14,52 @@ export default function Nav() {
     <Header>
       <NavbarWrapper>
         <Navbar>
-          <TitleLink href='/'>
+          <TitleLink
+            href='/'
+          >
             <H1>
-              ANDREW
+              andrew
             </H1>
             <H1>
               <Span>
-                MC
+                mc
               </Span>
             </H1>
           </TitleLink>
           <Div>
-            <Link href='/about'>
-              <H2 className='link'>
+            <Link
+              href='/about'
+            >
+              <H2>
                 About
               </H2>
             </Link>
-            <Link href='/projects'>
-              <H2 className='link'>
+            <Link
+              href='/projects'
+            >
+              <H2>
                 Projects
               </H2>
             </Link>
-            <Link href='/contact'>
-              <H2 className='link'>
+            <Link
+              href='/contact'
+            >
+              <H2>
                 Contact
               </H2>
             </Link>
-            <LinkIcon href='https://github.com/andrewlpmcneill'>
+            <LinkIcon
+              href='https://github.com/andrewlpmcneill'
+              target="_blank"
+              rel="noreferrer"
+            >
               <AiFillGithub />
             </LinkIcon>
-            <LinkIcon href='https://www.linkedin.com/in/andrewlpmcneill/'>
+            <LinkIcon
+              href='https://www.linkedin.com/in/andrewlpmcneill/'
+              target="_blank"
+              rel="noreferrer"
+            >
               <AiFillLinkedin />
             </LinkIcon>
             <HamburgerWrapper>
