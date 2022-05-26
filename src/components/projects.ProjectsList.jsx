@@ -1,7 +1,12 @@
 import React from 'react';
 import { Main, Project, Description, Screenshots, Heading, Stack, SubHeading, P, A } from '../components/projects.ProjectsList.styles';
+import Image from './Image';
 
-export default function ProjectsList() {
+export default function ProjectsList(props) {
+
+  const {
+    mood
+  } = props;
   
   return (
 
@@ -18,7 +23,7 @@ export default function ProjectsList() {
             PROJECT DESCRIPTION:
           </SubHeading>
           <P>
-            This project is a simple interface for interacting with OpenAI&apos;s powerful GPT-3 model. Users can create their own prompt or choose one of six presets. They can also select their engine and temperature (randomness) before submitting their prompt. If a user receives a hex color code back, the color theme of the app will automatically reflect this. Additionally, users can upload images of printed text. The backend will first perform OCR text extraction via the TesseractJS library, then send to GPT-3 for grammar correction and cleanup, and finally send the result back to the user.
+            This project is a simple app for interacting with OpenAI&apos;s powerful GPT-3 model. Users can create their own prompt or choose one of six presets. They can also select their engine and temperature (randomness) before submitting their prompt. If a user receives a hex color code back, the color theme of the app will automatically reflect this. Additionally, users can upload images of printed text. The backend will first perform OCR text extraction via the TesseractJS library, then send to GPT-3 for grammar correction and cleanup, and finally send the result back to the user.
           </P>
           <SubHeading>
             WHAT I LEARNED:
@@ -26,12 +31,32 @@ export default function ProjectsList() {
           <P>
             While it&apos;s a relatively straightforward app on the surface, this was a challenge for me to design and make fully responsive. Working with semantic HTML and WAI-ARIA standards in a React app was also new to me.
           </P>
-          <A href='https://fun-with-ai-am.netlify.app/' target="_blank" rel="noreferrer">visit demo</A>
+          <A href='https://fun-with-ai-am.netlify.app/' target="_blank" rel="noreferrer" mood={mood}>visit demo</A>
           <br />
-          <A href='https://github.com/andrewlpmcneill/fun-with-AI' target="_blank" rel="noreferrer">visit repository</A>
+          <A href='https://github.com/andrewlpmcneill/fun-with-AI' target="_blank" rel="noreferrer" mood={mood}>visit repository</A>
         </Description>
         <Screenshots>
-          image(s) here
+          {/* <img src={funWithAiOne} alt="One" /> */}
+          <Image
+            src="fun1.jpg"
+            alt="Fun with AI 1"
+            style={{borderRadius: "6px"}}
+          />
+          <Image
+            src="fun2.jpg"
+            alt="Fun with AI 2"
+            style={{borderRadius: "6px"}}
+          />
+          <Image
+            src="fun3.jpg"
+            alt="Fun with AI 3"
+            style={{borderRadius: "6px"}}
+          />
+          <Image
+            src="fun4.jpg"
+            alt="Fun with AI 4"
+            style={{borderRadius: "6px"}}
+          />
         </Screenshots>
       </Project>
       <Project>
@@ -54,12 +79,31 @@ export default function ProjectsList() {
           <P>
             Collaborating with two awesome fellow bootcamp students, this project was as much about communication and teamwork as it was technical. From scraping an API for over 36,000 data points, to using an ORM with JavaScript for the first time, to integrating reverse geocoding and the Google Maps API, to my first deployment, there was a lot to learn here.
           </P>
-          <A href='https://guessfm.netlify.app/' target="_blank" rel="noreferrer">visit demo</A>
+          <A href='https://guessfm.netlify.app/' target="_blank" rel="noreferrer" mood={mood}>visit demo</A>
           <br />
-          <A href='https://github.com/andrewlpmcneill/guess-fm' target="_blank" rel="noreferrer">visit repository</A>
+          <A href='https://github.com/andrewlpmcneill/guess-fm' target="_blank" rel="noreferrer" mood={mood}>visit repository</A>
         </Description>
         <Screenshots>
-          image(s) here
+          <Image
+            src="guess1.jpg"
+            alt="GuessFM 1"
+            style={{borderRadius: "6px"}}
+          />
+          <Image
+            src="guess2.jpg"
+            alt="GuessFM 2"
+            style={{borderRadius: "6px"}}
+          />
+          <Image
+            src="guess3.jpg"
+            alt="GuessFM 3"
+            style={{borderRadius: "6px"}}
+          />
+          <Image
+            src="guess4.jpg"
+            alt="GuessFM 4"
+            style={{borderRadius: "6px"}}
+          />
         </Screenshots>
       </Project>
       <Project>
@@ -82,10 +126,24 @@ export default function ProjectsList() {
           <P>
             This project is the result of my first experience with Ruby and Ruby on Rails. It served as a great introduction to the MVC pattern, Active Record ORM, and of course the Ruby programming language. The highly opinionated experience of Rails was a huge contrast to my prior experiences with open-ended NodeJS and Express.
           </P>
-          <A href='https://github.com/andrewlpmcneill/jungle-rails' target="_blank" rel="noreferrer">visit repository</A>
+          <A href='https://github.com/andrewlpmcneill/jungle-rails' target="_blank" rel="noreferrer" mood={mood}>visit repository</A>
         </Description>
         <Screenshots>
-          image(s) here
+          <Image
+            src="jungle1.jpg"
+            alt="Jungle 1"
+            style={{borderRadius: "6px"}}
+          />
+          <Image
+            src="jungle2.jpg"
+            alt="Jungle 2"
+            style={{borderRadius: "6px"}}
+          />
+          <Image
+            src="jungle3.jpg"
+            alt="Jungle 3"
+            style={{borderRadius: "6px"}}
+          />
         </Screenshots>
       </Project>
       <Project>
@@ -108,10 +166,24 @@ export default function ProjectsList() {
           <P>
             This project is the result of my first experience with React. I gained an understanding of how React renders elements, of properly updating state, custom hooks, and how important unit, integration, and end-to-end testing is in development.  
           </P>
-          <A href='https://github.com/andrewlpmcneill/scheduler' target="_blank" rel="noreferrer">visit repository</A>
+          <A href='https://github.com/andrewlpmcneill/scheduler' target="_blank" rel="noreferrer" mood={mood}>visit repository</A>
         </Description>
         <Screenshots>
-          image(s) here
+          <Image
+            src="scheduler1.jpg"
+            alt="Scheduler 1"
+            style={{borderRadius: "6px"}}
+          />
+          <Image
+            src="scheduler2.jpg"
+            alt="Scheduler 2"
+            style={{borderRadius: "6px"}}
+          />
+          <Image
+            src="scheduler3.jpg"
+            alt="Scheduler 3"
+            style={{borderRadius: "6px"}}
+          />
         </Screenshots>
       </Project>
       <Project>
@@ -134,10 +206,24 @@ export default function ProjectsList() {
           <P>
             I built this project with two fellow cohort members, and it was my first experience with a SPA. Using a popular legacy library, this project taught me a lot about application flow, RESTful APIs, and the ways a full-stack application shares data across the front end, back end, and database.
           </P>
-          <A href='https://github.com/andrewlpmcneill/PasswordKeepR' target="_blank" rel="noreferrer">visit repository</A>
+          <A href='https://github.com/andrewlpmcneill/PasswordKeepR' target="_blank" rel="noreferrer" mood={mood}>visit repository</A>
         </Description>
         <Screenshots>
-          image(s) here
+          <Image
+            src="password1.jpg"
+            alt="PasswordKeepr 1"
+            style={{borderRadius: "6px"}}
+          />
+          <Image
+            src="password2.jpg"
+            alt="PasswordKeepr 2"
+            style={{borderRadius: "6px"}}
+          />
+          <Image
+            src="password3.jpg"
+            alt="PasswordKeepr 3"
+            style={{borderRadius: "6px"}}
+          />
         </Screenshots>
       </Project>
     </Main>
