@@ -12,7 +12,7 @@ export const Header = styled.header`
 export const Navbar = styled.nav`
   display: flex;
   justify-content: space-between;
-  height: 64px;
+  height: 63px;
   margin: auto;
   @media (min-width: 1440px) {
     width: 1392px;
@@ -56,8 +56,28 @@ export const H2 = styled.h2`
 `;
 
 export const Span = styled.span`
-  background: linear-gradient(270deg, #ed4546 0%, #4180f0 50%, #ed4546 100%);
-  background: -webkit-linear-gradient(to right, #ed4546 0%, #4180f0 50%, #ed4546 100%);
+  /* background: linear-gradient(270deg, #ed4546 0%, #4180f0 50%, #ed4546 100%); */
+
+  background: ${props => {
+    switch(props.mood) {
+      default:
+        return "linear-gradient(270deg, #ed4546 0%, #4180f0 50%, #ed4546 100%)";
+      case "euphoria":
+        return "linear-gradient(270deg, #ed4546 0%, #4180f0 50%, #ed4546 100%)";
+      case "drupe":
+        return "linear-gradient(270deg, #F6EA41 0%, #F048C6 50%, #F6EA41 100%)";
+      case "mar caribe":
+        return "linear-gradient(270deg, #D9ECC7 0%, #07A3B2 50%, #D9ECC7 100%)";
+      case "viking":
+        return "linear-gradient(270deg, #DBD65C 0%, #5614B0 50%, #DBD65C 100%)";
+      case "opa":
+        return "linear-gradient(270deg, #1fddff 0%, #ff4b1f 50%, #1fddff 100%)";
+      case "dusk":
+        return "linear-gradient(270deg, #ffd89b 0%, #19547b 50%, #ffd89b 100%)";
+    }
+  }};
+
+  /* background: -webkit-linear-gradient(to right, #ed4546 0%, #4180f0 50%, #ed4546 100%); */
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -78,6 +98,7 @@ export const TitleLink = styled.a`
 `;
 
 export const Link = styled.a`
+  /* color: #f3f4f6; */
   text-decoration: none;
   @media (max-width: 766px) {
     display: none;
