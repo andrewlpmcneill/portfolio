@@ -46,6 +46,9 @@ export const H1 = styled.h1`
   letter-spacing: -1px;
   color: #f3f4f6;
   margin-bottom: 0;
+  @media (max-width: 824px) {
+    text-align: center;
+  }
 `;
 
 export const H2 = styled.h2`
@@ -78,7 +81,6 @@ export const Section = styled.section`
   @media (min-width: 1440px) {
     width: 1392px;
   }
-  
 `;
 
 export const A = styled.a`
