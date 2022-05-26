@@ -3,6 +3,9 @@ import styled from 'styled-components';
 export const Main = styled.main`
   padding-left: 8vw;
   padding-right: 8vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 export const Project = styled.article`
@@ -11,15 +14,33 @@ export const Project = styled.article`
   padding: 1rem;
   display: flex;
   margin-bottom: 2rem;
+  @media (max-width: 1023px) {
+    flex-direction: column;
+  }
+  @media (min-width: 1440px) and (max-width: 1667px) {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+  @media (min-width: 1668px) {
+    width: 1392px;
+    /* margin: auto; */
+  }
 `;
 
 export const Description = styled.div`
   padding: 0 1rem;
-  width: 40%;
-  position: sticky;
-  top: 10vh;
-  height: 100vh;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  @media (max-width: 1023px) {
+    width: 95%;
+    position: relative;
+    top: 1vh;
+  }
+  @media (min-width: 1024px) {
+    position: sticky;
+    width: 40%;
+    top: 10vh;
+    height: 100vh;
+  }
 `;
 
 export const Screenshots = styled.div`
@@ -30,6 +51,10 @@ export const Screenshots = styled.div`
   gap: 1rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
+  @media (max-width: 1023px) {
+    width: 95%;
+    margin-top: 3rem;
+  }
 `;
 
 export const Heading = styled.h1`
