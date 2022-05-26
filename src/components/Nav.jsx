@@ -4,11 +4,129 @@ import { AiFillGithub, AiFillLinkedin } from 'react-icons/ai';
 import Dropdown from './Nav.Dropdown';
 import Hamburger from './Nav.hamburger';
 import { Header, Navbar, Div, HamburgerWrapper, TitleLink, Link, LinkIcon, H1, H2, Span, NavbarWrapper } from './Nav.styles';
+import Select from 'react-select';
+
+const moods = {
+  euphoria: {
+    color1: "#ed4546",
+    color2: "#4180f0",
+  },
+  drupe: {
+    color1: "#F6EA41",
+    color2: "#F048C6",
+  },
+  marcaribe: {
+    color1: "#D9ECC7",
+    color2: "#07A3B2",
+  },
+  viking: {
+    color1: "#DBD65C",
+    color2: "#5614B0",
+  },
+  opa: {
+    color1: "#1fddff",
+    color2: "#ff4b1f",
+  },
+  dusk: {
+    color1: "#ffd89b",
+    color2: "#19547b",
+  },
+};
+
+const options = [
+  { value: 'euphoria', label: 'Euphoria', color: "#ed4546", color2: "#4180f0" },
+  { value: 'drupe', label: 'Drupe', color: "#F6EA41", color2: "#F048C6" },
+  { value: 'mar caribe', label: 'Mar Caribe', color: "#D9ECC7", color2: "#07A3B2"},
+  { value: 'viking', label: 'Viking', color: "#DBD65C", color2: "#5614B0"},
+  { value: 'opa', label: 'Opa', color: "#1fddff", color2: "#ff4b1f"},
+  { value: 'dusk', label: 'Dusk', color: "#ffd89b", color2: "#19547b"},
+];
+
+const dot = (color1, color2) => ({
+  alignItems: 'center',
+  display: 'flex',
+
+  ':before': {
+    background: `linear-gradient(to right, ${color1}, ${color2})`,
+    borderRadius: 10,
+    content: '" "',
+    display: 'block',
+    marginRight: 8,
+    height: 10,
+    width: 10,
+  },
+});
+
+const colourStyles = {
+  
+  control: (base) => ({
+    ...base,
+    backgroundColor: '#29292a',
+    borderRadius: 6,
+    boxShadow: 'none',
+    border: 0,
+  }),
+  option: (base, { data, isDisabled, isFocused, isSelected }) => {
+    return {
+      ...base,
+      backgroundColor: isSelected
+        ? '#4a4a4a'
+        : isFocused
+        ? '#3a3a3a'
+        : undefined,
+      color: isDisabled
+        ? '#ccc'
+        : isSelected
+        ? '#f3f4f6'
+        : '#f3f4f6',
+      cursor: isDisabled
+        ? 'not-allowed'
+        : 'default',
+      ':active': {
+        ...base[':active'],
+        background: !isDisabled
+          ? isSelected
+            ? `linear-gradient(to right, ${data.color}, ${data.color2})`
+            : `linear-gradient(to right, ${data.color}, ${data.color2})`
+          : undefined,
+        color: !isDisabled
+          ? isSelected
+            ? '#29292a'
+            : '#29292a'
+          : undefined,
+      },
+    }
+  },
+  singleValue: (base, { data }) => ({
+    ...base, 
+    ...dot(data.color, data.color2), 
+    color: '#f3f4f6',
+  }),
+  container: (base) => ({
+    ...base,
+    width: 156,
+  }),
+  dropdownIndicator: (base) => ({
+    ...base,
+    color: 'white',
+  }),
+  menu: (base) => ({
+    ...base,
+    backgroundColor: '#29292a',
+    borderRadius: 6,
+  }),
+  indicatorSeparator: (base) => ({
+    ...base,
+    backgroundColor: '#29292a',
+  })
+};
 
 export default function Nav(props) {
 
   const {
-    page
+    page,
+    mood,
+    setMood
   } = props;
 
   const [open, setOpen] = useState(false);
@@ -25,7 +143,9 @@ export default function Nav(props) {
               andrew
             </H1>
             <H1>
-              <Span>
+              <Span
+                mood={mood}
+              >
                 mc
               </Span>
             </H1>
@@ -58,6 +178,15 @@ export default function Nav(props) {
                 Contact
               </H2>
             </Link>
+            <Select
+              options={options}
+              defaultValue={{value: mood, label: (mood.slice(0,1).toUpperCase() + mood.slice(1)), color: moods[(mood.split(' ').join(''))].color1, color2: moods[(mood.split(' ').join(''))].color2}}
+              onChange={event => {
+                setMood(event.value)
+              }}
+              styles={colourStyles}
+              isSearchable={false}
+            />
             <LinkIcon
               href='https://github.com/andrewlpmcneill'
               target="_blank"
