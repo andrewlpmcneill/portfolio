@@ -40,7 +40,24 @@ export const H1 = styled.h1`
 `;
 
 export const Span = styled.span`
-  background: -webkit-linear-gradient(0deg, #ed4546, #4180f0);
+  background: ${props => {
+    switch(props.mood) {
+      default:
+        return "-webkit-linear-gradient(0deg, #ed4546, #4180f0)";
+      case "euphoria":
+        return "-webkit-linear-gradient(0deg, #ed4546, #4180f0)";
+      case "drupe":
+        return "-webkit-linear-gradient(0deg, #F6EA41, #F048C6)";
+      case "mar caribe":
+        return "-webkit-linear-gradient(0deg, #D9ECC7, #07A3B2)";
+      case "viking":
+        return "-webkit-linear-gradient(0deg, #DBD65C, #5614B0)";
+      case "opa":
+        return "-webkit-linear-gradient(0deg, #1fddff, #ff4b1f)";
+      case "dusk":
+        return "-webkit-linear-gradient(0deg, #ffd89b, #19547b)";
+    }
+  }};
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -51,7 +68,7 @@ export const H3 = styled.h3`
   color: #9ca3af;
   font-size: 20px;
   font-weight: 400;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
   margin-top: 1.5rem;
   padding-bottom: 38px;
   @media (min-width: 896px) {
@@ -74,7 +91,45 @@ export const P = styled.p`
 
 export const A = styled.a`
   color: #f3f4f6;
-  text-decoration-color: #4180f0;
+  /* text-decoration-color: #4180f0; */
+  text-decoration-color: ${props => {
+    switch(props.mood) {
+      default:
+        return "#4180f0";
+      case "euphoria":
+        return "#4180f0";
+      case "drupe":
+        return "#F048C6";
+      case "mar caribe":
+        return "#07A3B2";
+      case "viking":
+        return "#5614B0";
+      case "opa":
+        return "#ff4b1f";
+      case "dusk":
+        return "#19547b";
+    }
+  }};
+  &:hover {
+    color: ${props => {
+    switch(props.mood) {
+      default:
+        return "#ed4546";
+      case "euphoria":
+        return "#ed4546";
+      case "drupe":
+        return "#F6EA41";
+      case "mar caribe":
+        return "#D9ECC7";
+      case "viking":
+        return "#DBD65C";
+      case "opa":
+        return "#1fddff";
+      case "dusk":
+        return "#ffd89b";
+    }
+  }};
+  }
 `;
 
 export const Section = styled.section`
@@ -105,7 +160,24 @@ export const Item = styled.li`
   line-height: 29px;
   &:before {
     content: "•";
-    color: #ed4546;
+    color: ${props => {
+    switch(props.mood) {
+      default:
+        return "#ed4546";
+      case "euphoria":
+        return "#ed4546";
+      case "drupe":
+        return "#F6EA41";
+      case "mar caribe":
+        return "#D9ECC7";
+      case "viking":
+        return "#DBD65C";
+      case "opa":
+        return "#1fddff";
+      case "dusk":
+        return "#ffd89b";
+    }
+  }};
     display: inline-block;
     font-size: 24px;
     margin-right: 0.5em;
