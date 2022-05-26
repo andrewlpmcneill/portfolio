@@ -87,6 +87,9 @@ export const P = styled.p`
   font-weight: 300;
   font-size: 17px;
   text-align: center;
+  @media (max-width: 730px) {
+    width: 95%;
+  }
 `;
 
 export const A = styled.a`
