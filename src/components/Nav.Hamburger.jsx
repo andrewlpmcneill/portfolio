@@ -1,5 +1,5 @@
 import React from 'react';
-import './Nav.hamburger.css';
+import './Nav.hamburger.styles.css';
 
 export default function Hamburger(props) {
 

@@ -7,7 +7,7 @@ export default function Error() {
   return (
 
     <>
-      <Nav />
+      {/* <Nav /> */}
       <header>
         <h1 className='title'>
           Oops! Looks like <br /><span className='title-coloured'>you&apos;ve taken a wrong turn.</span>
