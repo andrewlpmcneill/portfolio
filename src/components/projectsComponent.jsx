@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import ProjectsList from './projects.projectsList';
+import ProjectsList from './projects.ProjectsList';
 import { Main, Header, H1, Span, H3, A } from './projects.styles';
 import pattern from '../../static/pattern.svg';
 import { MoodContext } from './Layout';
