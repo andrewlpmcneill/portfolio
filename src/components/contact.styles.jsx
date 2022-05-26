@@ -39,8 +39,43 @@ export const H1 = styled.h1`
   text-align: center;
 `;
 
+export const H3 = styled.h3`
+  color: #9ca3af;
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  margin-top: 1.5rem;
+  padding-bottom: 38px;
+  @media (min-width: 896px) {
+    width: 832px;
+    text-align: center;
+  }
+  @media (max-width: 895px) {
+    width: 92%;
+    text-align: center;
+  }
+  border-bottom: 1px solid #2a2a2a;
+`;
+
 export const Span = styled.span`
-  background: -webkit-linear-gradient(0deg, #ed4546, #4180f0);
+  background: ${props => {
+    switch(props.mood) {
+      default:
+        return "-webkit-linear-gradient(0deg, #ed4546, #4180f0)";
+      case "euphoria":
+        return "-webkit-linear-gradient(0deg, #ed4546, #4180f0)";
+      case "drupe":
+        return "-webkit-linear-gradient(0deg, #F6EA41, #F048C6)";
+      case "mar caribe":
+        return "-webkit-linear-gradient(0deg, #D9ECC7, #07A3B2)";
+      case "viking":
+        return "-webkit-linear-gradient(0deg, #DBD65C, #5614B0)";
+      case "opa":
+        return "-webkit-linear-gradient(0deg, #1fddff, #ff4b1f)";
+      case "dusk":
+        return "-webkit-linear-gradient(0deg, #ffd89b, #19547b)";
+    }
+  }};
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -48,27 +83,64 @@ export const Span = styled.span`
 `;
 
 export const Section = styled.section`
-  text-align: center;
-  margin-top: 10rem;
+  /* text-align: center; */
+  margin-top: 4rem;
   margin-bottom: 45rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+
 `;
 
 export const A = styled.a`
   color: #f3f4f6;
-  text-decoration-color: #4180f0;
+  text-decoration: none;
+  &:hover {
+    color: ${props => {
+    switch(props.mood) {
+      default:
+        return "#ed4546";
+      case "euphoria":
+        return "#ed4546";
+      case "drupe":
+        return "#F6EA41";
+      case "mar caribe":
+        return "#D9ECC7";
+      case "viking":
+        return "#DBD65C";
+      case "opa":
+        return "#1fddff";
+      case "dusk":
+        return "#ffd89b";
+    }
+  }};
+  }
 `;
 
-export const Item = styled.li`
+export const Item = styled.h2`
   font-size: 36px;
   font-weight: 500;
-  color: #f3f4f6d2;
+  color: ${props => {
+    switch(props.mood) {
+      default:
+        return "#4180f0";
+      case "euphoria":
+        return "#4180f0";
+      case "drupe":
+        return "#F048C6";
+      case "mar caribe":
+        return "#07A3B2";
+      case "viking":
+        return "#5614B0";
+      case "opa":
+        return "#ff4b1f";
+      case "dusk":
+        return "#19547b";
+    }
+  }};
   line-height: 48px;
-  &:before {
-    content: "•";
-    color: #ed4546;
-    display: inline-block;
-    font-size: 24px;
-    margin-right: 0.5em;
-    margin-left: -1em;
-  }
+  margin: 0;
+  display: flex;
+  align-items: center;
 `;
