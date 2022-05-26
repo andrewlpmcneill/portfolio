@@ -40,6 +40,10 @@ export const H2 = styled.h2`
   letter-spacing: 0.5px;
   margin-top: 1.5rem;
   margin-bottom: 0;
+  @media (max-width: 630px) {
+    text-align: center;
+    width: 95%;
+  }
 `;
 
 export const Span = styled.span`
@@ -87,6 +91,7 @@ export const Links = styled.div`
 export const Link = styled.a`
   @media (max-width: 639px) {
     width: 89%;
+    margin-right: 0;
   }
   background-color: ${props => props.reach ? "#ffffff" : "#1d1d1d"};
   color: ${props => props.reach ? "#111111" : "#d1d5db"};
