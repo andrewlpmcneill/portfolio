@@ -5,19 +5,19 @@ import pattern from '../../static/pattern.svg';
 export default function Header(props) {
 
   const {
-    title
+    title,
+    mood
   } = props;
 
   return (
 
     <StyledHeader
-      // style={{backgroundImage: `url(${pattern})`}}
       style={{backgroundImage: `linear-gradient(to bottom, rgba(17,17,17,0) 15%, rgba(17,17,17,1)), url(${pattern})`}}
     >
       {title &&
       <>
         <H1>
-          A developer who <br /><Span>cares about detail.</Span>
+          A developer who <br /><Span mood={mood}>cares about detail.</Span>
         </H1>
         <H2>
           Full-stack web developer based in Halifax, Nova Scotia, Canada.
