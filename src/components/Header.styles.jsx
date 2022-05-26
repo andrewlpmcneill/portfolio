@@ -37,13 +37,30 @@ export const H2 = styled.h2`
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-size: 20px;
   font-weight: 400;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
   margin-top: 1.5rem;
   margin-bottom: 0;
 `;
 
 export const Span = styled.span`
-  background: -webkit-linear-gradient(0deg, #ed4546, #4180f0);
+  background: ${props => {
+    switch(props.mood) {
+      default:
+        return "-webkit-linear-gradient(0deg, #ed4546, #4180f0)";
+      case "euphoria":
+        return "-webkit-linear-gradient(0deg, #ed4546, #4180f0)";
+      case "drupe":
+        return "-webkit-linear-gradient(0deg, #F6EA41, #F048C6)";
+      case "mar caribe":
+        return "-webkit-linear-gradient(0deg, #D9ECC7, #07A3B2)";
+      case "viking":
+        return "-webkit-linear-gradient(0deg, #DBD65C, #5614B0)";
+      case "opa":
+        return "-webkit-linear-gradient(0deg, #1fddff, #ff4b1f)";
+      case "dusk":
+        return "-webkit-linear-gradient(0deg, #ffd89b, #19547b)";
+    }
+  }};
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
