@@ -2,7 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import { AiFillGithub, AiFillLinkedin } from 'react-icons/ai';
 import Dropdown from './Nav.Dropdown';
-import Hamburger from './Nav.hamburger';
+import Hamburger from './Nav.Hamburger';
 import { Header, Navbar, Div, HamburgerWrapper, TitleLink, Link, LinkIcon, H1, H2, Span, NavbarWrapper } from './Nav.styles';
 import Select from 'react-select';
 
