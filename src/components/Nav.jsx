@@ -180,7 +180,7 @@ export default function Nav(props) {
             </Link>
             <Select
               options={options}
-              defaultValue={{value: mood, label: (mood.slice(0,1).toUpperCase() + mood.slice(1)), color: moods[(mood.split(' ').join(''))].color1, color2: moods[(mood.split(' ').join(''))].color2}}
+              defaultValue={{value: mood, label: mood === 'mar caribe' ? 'Mar Caribe' : (mood.slice(0,1).toUpperCase() + mood.slice(1)), color: moods[(mood.split(' ').join(''))].color1, color2: moods[(mood.split(' ').join(''))].color2}}
               onChange={event => {
                 setMood(event.value)
               }}
