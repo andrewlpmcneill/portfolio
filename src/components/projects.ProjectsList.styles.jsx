@@ -25,11 +25,17 @@ export const Description = styled.div`
 export const Screenshots = styled.div`
   width: 60%;
   padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 `;
 
 export const Heading = styled.h1`
   font-size: 34px;
   color: #cac5be;
+  margin-top: 1rem;
 `;
 
 export const Stack = styled.h2`
@@ -57,5 +63,42 @@ export const P = styled.p`
 
 export const A = styled.a`
   color: #cac5be;
-  text-decoration-color: #4180f0;
+  text-decoration-color: ${props => {
+    switch(props.mood) {
+      default:
+        return "#4180f0";
+      case "euphoria":
+        return "#4180f0";
+      case "drupe":
+        return "#F048C6";
+      case "mar caribe":
+        return "#07A3B2";
+      case "viking":
+        return "#5614B0";
+      case "opa":
+        return "#ff4b1f";
+      case "dusk":
+        return "#19547b";
+    }
+  }};
+  &:hover {
+    color: ${props => {
+    switch(props.mood) {
+      default:
+        return "#ed4546";
+      case "euphoria":
+        return "#ed4546";
+      case "drupe":
+        return "#F6EA41";
+      case "mar caribe":
+        return "#D9ECC7";
+      case "viking":
+        return "#DBD65C";
+      case "opa":
+        return "#1fddff";
+      case "dusk":
+        return "#ffd89b";
+    }
+    }};
+  }
 `;
