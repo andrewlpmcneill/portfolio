@@ -4,6 +4,8 @@
  * See: https://www.gatsbyjs.com/docs/gatsby-config/
  */
 
+const path = require(`path`);
+
 module.exports = {
   /* Your site config here */
   plugins: [`gatsby-plugin-styled-components`, {
@@ -13,5 +15,12 @@ module.exports = {
         include: /assets/
       }
     }
-  }],
+  }, {
+    resolve: `gatsby-source-filesystem`,
+    options: {
+      path: path.join(__dirname, `src`, `images`),
+    },
+  },
+  `gatsby-plugin-sharp`,
+  `gatsby-transformer-sharp`,],
 }
