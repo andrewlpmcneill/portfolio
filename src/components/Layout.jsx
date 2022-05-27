@@ -17,7 +17,7 @@ export default function Layout(props) {
   const [mood, setMood] = useState("Euphoria");
   
   useEffect(() => {
-    if (typeof window !== 'undefined' && mood !== "initial") {
+    if (typeof window !== 'undefined' && mood !== "Euphoria") {
       localStorage.setItem("mood", mood);
     }
   }, [mood]);
