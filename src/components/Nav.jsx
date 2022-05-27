@@ -143,10 +143,6 @@ export default function Nav(props) {
     }, 700)
   }, []);
 
-  // useEffect(() => {
-  //   document.getElementById("mood-select").value = mood;
-  // }, [mood]);
-  
   return (
 
     <Header>
