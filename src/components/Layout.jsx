@@ -15,11 +15,16 @@ export default function Layout(props) {
   } = props;
 
   const [mood, setMood] = useState(() => {
-    if (typeof window !== 'undefined') {
-      return localStorage.getItem("mood") || "euphoria"
-    } else {
-      return "drupe";
-    }
+    setTimeout(() => {
+      console.log('timeout!');
+    }, 100)
+      .then(() => {
+        if (typeof window !== 'undefined') {
+          return localStorage.getItem("mood") || "euphoria"
+        } else {
+          return "drupe";
+        }
+      })
   });
 
   useEffect(() => {
