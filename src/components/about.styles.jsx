@@ -11,7 +11,7 @@ export const Header = styled.header`
   align-items: center;
   margin: 0;
   width: 100%;
-  margin-top: 64px;
+  padding-top: 64px;
   margin-bottom: 3rem;
   `;
 
