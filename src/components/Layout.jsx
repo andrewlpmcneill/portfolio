@@ -18,20 +18,13 @@ export default function Layout(props) {
     if (typeof window !== 'undefined') {
       return localStorage.getItem("mood") || "euphoria"
     } else {
-      return "drupe";
+      return localStorage.getItem("mood");
     }
   });
-
-  useEffect(() => {
-    setTimeout(() => {
-      setMood(localStorage.getItem("mood"));
-    }, 200)
-  }, [])
   
   useEffect(() => {
     if (typeof window !== 'undefined') {
       localStorage.setItem("mood", mood);
-      setMood(localStorage.getItem("mood"));
     }
   }, [mood]);
 
