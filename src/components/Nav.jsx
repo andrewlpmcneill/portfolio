@@ -8,7 +8,7 @@ import Select from 'react-select';
 import PulseLoader from 'react-spinners/PulseLoader';
 
 const moods = {
-  initial: {
+  Euphoria: {
     color1: "#ed4546",
     color2: "#4180f0",
   },
