@@ -14,19 +14,17 @@ export default function Layout(props) {
     page
   } = props;
 
-  const [mood, setMood] = useState(() => {
-    if (typeof window !== 'undefined') {
-      return localStorage.getItem("mood") || "euphoria"
-    } else {
-      return localStorage.getItem("mood");
-    }
-  });
+  const [mood, setMood] = useState("euphoria");
   
   useEffect(() => {
     if (typeof window !== 'undefined') {
       localStorage.setItem("mood", mood);
     }
   }, [mood]);
+
+  useEffect(() => {
+    localStorage.getItem("mood")
+  },[]);
 
   return (
 
