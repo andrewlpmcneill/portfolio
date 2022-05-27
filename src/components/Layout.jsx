@@ -14,7 +14,7 @@ export default function Layout(props) {
     page
   } = props;
 
-  const [mood, setMood] = useState("euphoria");
+  const [mood, setMood] = useState();
   
   useEffect(() => {
     if (typeof window !== 'undefined') {
