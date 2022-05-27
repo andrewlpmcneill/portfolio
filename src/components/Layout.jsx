@@ -15,25 +15,23 @@ export default function Layout(props) {
   } = props;
 
   const [mood, setMood] = useState(() => {
-    setTimeout(() => {
-      console.log('timeout!');
-    }, 100)
-      .then(() => {
-        if (typeof window !== 'undefined') {
-          return localStorage.getItem("mood") || "euphoria"
-        } else {
-          return "drupe";
-        }
-      })
+    if (typeof window !== 'undefined') {
+      return localStorage.getItem("mood") || "euphoria"
+    } else {
+      return "drupe";
+    }
   });
 
   useEffect(() => {
-    setMood(localStorage.getItem("mood"));
-  }, []);
+    setTimeout(() => {
+      setMood(localStorage.getItem("mood"));
+    }, 200)
+  }, [])
   
   useEffect(() => {
     if (typeof window !== 'undefined') {
       localStorage.setItem("mood", mood);
+      setMood(localStorage.getItem("mood"));
     }
   }, [mood]);
 
