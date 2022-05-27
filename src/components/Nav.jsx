@@ -7,6 +7,10 @@ import { Header, Navbar, Div, HamburgerWrapper, TitleLink, Link, LinkIcon, H1, H
 import Select from 'react-select';
 
 const moods = {
+  initial: {
+    color1: "#ed4546",
+    color2: "#4180f0",
+  },
   euphoria: {
     color1: "#ed4546",
     color2: "#4180f0",
