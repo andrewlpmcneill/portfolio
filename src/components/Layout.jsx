@@ -25,6 +25,7 @@ export default function Layout(props) {
   useEffect(() => {
     if (typeof window !== 'undefined') {
       localStorage.setItem("mood", mood);
+      setMood(localStorage.getItem("mood"));
     }
   }, [mood]);
 
