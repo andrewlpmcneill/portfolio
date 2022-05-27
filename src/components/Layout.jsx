@@ -23,7 +23,7 @@ export default function Layout(props) {
   }, [mood]);
 
   useEffect(() => {
-    setMood(localStorage.getItem("mood"));
+    if (localStorage.getItem("mood")) setMood(localStorage.getItem("mood"));
   },[]);
 
   return (
