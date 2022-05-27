@@ -14,16 +14,16 @@ export default function Layout(props) {
     page
   } = props;
 
-  const [mood, setMood] = useState();
+  const [mood, setMood] = useState("initial");
   
   useEffect(() => {
-    if (typeof window !== 'undefined') {
+    if (typeof window !== 'undefined' && mood !== "initial") {
       localStorage.setItem("mood", mood);
     }
   }, [mood]);
 
   useEffect(() => {
-    localStorage.getItem("mood")
+    setMood(localStorage.getItem("mood"));
   },[]);
 
   return (
