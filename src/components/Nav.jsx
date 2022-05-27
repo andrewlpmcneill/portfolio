@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useState } from 'react';
 import { AiFillGithub, AiFillLinkedin } from 'react-icons/ai';
 import Dropdown from './Nav.Dropdown';
@@ -134,6 +134,10 @@ export default function Nav(props) {
   } = props;
 
   const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    document.getElementById("mood-select").value = mood;
+  }, [mood]);
   
   return (
 
@@ -183,6 +187,7 @@ export default function Nav(props) {
               </H2>
             </Link>
             <Select
+              id="mood-select"
               options={options}
               defaultValue={{
                 value: mood,
