@@ -23,9 +23,12 @@ export default function Layout(props) {
   });
 
   useEffect(() => {
+    setMood(localStorage.getItem("mood"));
+  }, []);
+  
+  useEffect(() => {
     if (typeof window !== 'undefined') {
       localStorage.setItem("mood", mood);
-      setMood(localStorage.getItem("mood"));
     }
   }, [mood]);
 
