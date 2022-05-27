@@ -201,7 +201,7 @@ export default function Nav(props) {
                     color: mood ? moods[(mood.split(' ').join(''))].color1 : 'black',
                     color2: mood ? moods[(mood.split(' ').join(''))].color2 : 'black',
                   })
-                }, 100)
+                }, 400)
               }}
               onChange={event => {
                 setMood(event.value)
