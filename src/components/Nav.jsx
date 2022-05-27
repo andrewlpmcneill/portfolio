@@ -196,8 +196,8 @@ export default function Nav(props) {
                   : mood
                     ? (mood.slice(0,1).toUpperCase() + mood.slice(1))
                     : "Euphoria",
-                color: moods[(mood.split(' ').join(''))].color1,
-                color2: moods[(mood.split(' ').join(''))].color2
+                color: mood ? moods[(mood.split(' ').join(''))].color1 : 'black',
+                color2: mood ? moods[(mood.split(' ').join(''))].color2 : 'black',
               }}
               onChange={event => {
                 setMood(event.value)
