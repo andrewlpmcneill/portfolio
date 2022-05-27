@@ -18,7 +18,7 @@ export default function Layout(props) {
     if (typeof window !== 'undefined') {
       return localStorage.getItem("mood") || "euphoria"
     } else {
-      return "euphoria";
+      return "drupe";
     }
   });
 
