@@ -189,15 +189,19 @@ export default function Nav(props) {
             <Select
               id="mood-select"
               options={options}
-              defaultValue={{
-                value: mood,
-                label: mood === 'mar caribe' 
-                  ? 'Mar Caribe' 
-                  : mood
-                    ? (mood.slice(0,1).toUpperCase() + mood.slice(1))
-                    : "Euphoria",
-                color: mood ? moods[(mood.split(' ').join(''))].color1 : 'black',
-                color2: mood ? moods[(mood.split(' ').join(''))].color2 : 'black',
+              defaultValue={() => {
+                setTimeout(() => {
+                  return ({
+                    value: mood,
+                    label: mood === 'mar caribe' 
+                      ? 'Mar Caribe' 
+                      : mood
+                        ? (mood.slice(0,1).toUpperCase() + mood.slice(1))
+                        : "Euphoria",
+                    color: mood ? moods[(mood.split(' ').join(''))].color1 : 'black',
+                    color2: mood ? moods[(mood.split(' ').join(''))].color2 : 'black',
+                  })
+                }, 100)
               }}
               onChange={event => {
                 setMood(event.value)
