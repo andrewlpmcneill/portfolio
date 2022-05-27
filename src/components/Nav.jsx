@@ -5,6 +5,7 @@ import Dropdown from './Nav.Dropdown';
 import Hamburger from './Nav.Hamburger';
 import { Header, Navbar, Div, HamburgerWrapper, TitleLink, Link, LinkIcon, H1, H2, Span, NavbarWrapper } from './Nav.styles';
 import Select from 'react-select';
+import PulseLoader from 'react-spinners/PulseLoader';
 
 const moods = {
   initial: {
@@ -134,10 +135,17 @@ export default function Nav(props) {
   } = props;
 
   const [open, setOpen] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    document.getElementById("mood-select").value = mood;
-  }, [mood]);
+    setTimeout(() => {
+      setLoading(false);
+    }, 700)
+  }, []);
+
+  // useEffect(() => {
+  //   document.getElementById("mood-select").value = mood;
+  // }, [mood]);
   
   return (
 
@@ -186,25 +194,30 @@ export default function Nav(props) {
                 Contact
               </H2>
             </Link>
-            <Select
-              id="mood-select"
-              options={options}
-              defaultValue={{
-                value: mood,
-                label: mood === 'mar caribe' 
-                  ? 'Mar Caribe' 
-                  : mood
-                    ? (mood.slice(0,1).toUpperCase() + mood.slice(1))
-                    : "Euphoria",
-                color: mood ? moods[(mood.split(' ').join(''))].color1 : 'black',
-                color2: mood ? moods[(mood.split(' ').join(''))].color2 : 'black',
-              }}
-              onChange={event => {
-                setMood(event.value)
-              }}
-              styles={colourStyles}
-              isSearchable={false}
-            />
+            {loading 
+              ? <div style={{width: "156px", height: "38px", display: "flex", justifyContent: "center", alignItems: "center"}}>
+                  <PulseLoader size={10} loading={true} color={"#f3f4f6"} />
+                </div>
+              : <Select
+                  id="mood-select"
+                  options={options}
+                  defaultValue={{
+                    value: mood,
+                    label: mood === 'mar caribe' 
+                      ? 'Mar Caribe' 
+                      : mood
+                        ? (mood.slice(0,1).toUpperCase() + mood.slice(1))
+                        : "Euphoria",
+                    color: mood ? moods[(mood.split(' ').join(''))].color1 : 'black',
+                    color2: mood ? moods[(mood.split(' ').join(''))].color2 : 'black',
+                  }}
+                  onChange={event => {
+                    setMood(event.value)
+                  }}
+                  styles={colourStyles}
+                  isSearchable={false}
+                />
+            }
             <LinkIcon
               href='https://github.com/andrewlpmcneill'
               target="_blank"
