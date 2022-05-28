@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Helmet } from 'react-helmet';
 import Nav from './Nav';
 import Header from './Header';
 import Footer from './Footer';
@@ -31,6 +32,14 @@ export default function Layout(props) {
     <MoodContext.Provider
       value={mood}
     >
+      <Helmet>
+        <meta
+          charSet="utf-8"
+        />
+        <title>
+          {`Andrew McNeill | ${page.slice(0,1).toUpperCase() + page.slice(1)}`}
+        </title>
+      </Helmet>
       <Nav
         page={page}
         mood={mood}
