@@ -2,10 +2,16 @@
   #mood-select-full {
     display: none;
   }
+  #loading {
+    display: none!important;
+  }
 }
 
 @media (min-width: 767px) {
   #mood-select-mobile {
     display: none;
+  }
+  #loading-mobile {
+    display: none!important;
   }
 }

@@ -146,15 +146,8 @@ export default function Nav(props) {
   } = props;
 
   const [open, setOpen] = useState(false);
-  const [loading, setLoading] = useState(() => {
-    if (typeof window !== 'undefined') {
-      const element = document.querySelector('#mood-select-full');
-      console.log(element);
-      console.log(getComputedStyle(element));
-    }
-    return true;
-  });
-  const [loadingMobile, setLoadingMobile] = useState(true)
+  const [loading, setLoading] = useState(true);
+  const [loadingMobile, setLoadingMobile] = useState(true);
 
   useEffect(() => {
     setTimeout(() => {
@@ -211,8 +204,21 @@ export default function Nav(props) {
               </H2>
             </Link>
             {loading 
-              ? <div  style={{width: "156px", height: "38px", display: "flex", justifyContent: "center", alignItems: "center"}}>
-                  <PulseLoader size={10} loading={true} color={"#f3f4f6"} />
+              ? <div
+                  id="loading"
+                  style={{
+                    width: "156px",
+                    height: "38px",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center"
+                  }}
+                >
+                  <PulseLoader
+                    size={10}
+                    loading={true}
+                    color={"#f3f4f6"}
+                  />
                 </div>
               : <Select
                   id="mood-select-full"
@@ -235,8 +241,21 @@ export default function Nav(props) {
                 />
             }
             {loadingMobile
-              ? <div  style={{width: "1.5rem", height: "1.5rem", display: "flex", justifyContent: "center", alignItems: "center"}}>
-                  <ClipLoader size={16} loading={true} color={"#f3f4f6"} />
+              ? <div
+                  id="loading-mobile"
+                  style={{
+                    width: "1.5rem",
+                    height: "1.5rem",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center"
+                  }}
+                >
+                  <ClipLoader
+                    size={16}
+                    loading={true}
+                    color={"#f3f4f6"}
+                  />
                 </div>
               : <ThemeButton
                   id="mood-select-mobile"
