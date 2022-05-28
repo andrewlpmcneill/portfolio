@@ -149,12 +149,12 @@ export default function Nav(props) {
   const [loading, setLoading] = useState(() => {
     return setTimeout(() => {
       return true;
-    }, 100)
+    }, 300)
   });
   const [loadingMobile, setLoadingMobile] = useState(() => {
     return setTimeout(() => {
       return true;
-    }, 100)
+    }, 300)
   });
 
   useEffect(() => {
