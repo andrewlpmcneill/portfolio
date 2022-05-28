@@ -146,8 +146,16 @@ export default function Nav(props) {
   } = props;
 
   const [open, setOpen] = useState(false);
-  const [loading, setLoading] = useState(true);
-  const [loadingMobile, setLoadingMobile] = useState(true)
+  const [loading, setLoading] = useState(() => {
+    return setTimeout(() => {
+      return true;
+    }, 100)
+  });
+  const [loadingMobile, setLoadingMobile] = useState(() => {
+    return setTimeout(() => {
+      return true;
+    }, 100)
+  });
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
