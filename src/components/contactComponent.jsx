@@ -27,7 +27,7 @@ export default function ContactComponent() {
         <Item
           mood={mood}
         >
-          <MdEmail />&nbsp;<A href='andrew@andrewmc.ca' mood={mood}>andrew@andrewmc.ca</A>
+          <MdEmail />&nbsp;<A href='mailto:andrew@andrewmc.ca' mood={mood}>andrew@andrewmc.ca</A>
         </Item>
         <Item
           mood={mood}

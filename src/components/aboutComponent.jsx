@@ -51,7 +51,7 @@ export default function AboutComponent() {
           Connect
         </H2>
         <SubHeading>
-          You can always contact me at <A href='andrew@andrewmc.ca' mood={mood}>andrew@andrewmc.ca</A> to say hello &#8212; I love meeting new people!
+          You can always contact me at <A href='mailto:andrew@andrewmc.ca' mood={mood}>andrew@andrewmc.ca</A> to say hello &#8212; I love meeting new people!
         </SubHeading>
         <ul
           style={{listStyle: "none"}}
