@@ -147,12 +147,16 @@ export default function Nav(props) {
 
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(() => {
-    const mediaQuery = window.matchMedia('(min-width: 767px)');
-    return mediaQuery.matches ? true : false;
+    if (typeof window !== 'undefined') {
+      const mediaQuery = window.matchMedia('(min-width: 767px)');
+      return mediaQuery.matches ? true : false;
+    }
   });
   const [loadingMobile, setLoadingMobile] = useState(() => {
-    const mediaQuery = window.matchMedia('(max-width: 766px)');
-    return mediaQuery.matches ? true : false;
+    if (typeof window !== 'undefined') {
+      const mediaQuery = window.matchMedia('(max-width: 766px)');
+      return mediaQuery.matches ? true : false;
+    }
   })
 
   useEffect(() => {
