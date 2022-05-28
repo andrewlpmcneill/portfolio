@@ -147,7 +147,10 @@ export default function Nav(props) {
 
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(() => {
-    if (typeof window !== 'undefined') console.log('does this work?', document.getElementById('mood-select-full').style.display);
+    if (typeof window !== 'undefined') {
+      const element = document.getElementById('mood-select-full');
+      console.log(getComputedStyle(element));
+    }
     return true;
   });
   const [loadingMobile, setLoadingMobile] = useState(true)
