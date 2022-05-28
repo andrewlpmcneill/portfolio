@@ -110,3 +110,29 @@ export const LinkIcon = styled.a`
   font-size: 24px;
   padding-top: 5px;
 `;
+
+export const ThemeButton = styled.div`
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 2px solid #f3f4f6;
+  border-radius: 50%;
+  background: ${props => {
+    switch(props.mood) {
+      default:
+        return "linear-gradient(270deg, #ed4546 0%, #4180f0 50%, #ed4546 100%)";
+      case "euphoria":
+        return "linear-gradient(270deg, #ed4546 0%, #4180f0 50%, #ed4546 100%)";
+      case "drupe":
+        return "linear-gradient(270deg, #F6EA41 0%, #F048C6 50%, #F6EA41 100%)";
+      case "mar caribe":
+        return "linear-gradient(270deg, #D9ECC7 0%, #07A3B2 50%, #D9ECC7 100%)";
+      case "viking":
+        return "linear-gradient(270deg, #DBD65C 0%, #5614B0 50%, #DBD65C 100%)";
+      case "opa":
+        return "linear-gradient(270deg, #1fddff 0%, #ff4b1f 50%, #1fddff 100%)";
+      case "dusk":
+        return "linear-gradient(270deg, #ffd89b 0%, #19547b 50%, #ffd89b 100%)";
+    }
+  }};
+  cursor: pointer;
+`;
