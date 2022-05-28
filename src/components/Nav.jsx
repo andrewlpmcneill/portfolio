@@ -152,7 +152,7 @@ export default function Nav(props) {
   useEffect(() => {
     if (typeof window !== 'undefined') {
       const mediaQuery = window.matchMedia('(min-width: 767px)');
-      mediaQuery.matches ? setLoading(false) : setLoadingMobile(false);
+      mediaQuery.matches ? setLoadingMobile(false) : setLoading(false);
     }
     setTimeout(() => {
       setLoading(false);
