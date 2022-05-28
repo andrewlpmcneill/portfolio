@@ -149,6 +149,7 @@ export default function Nav(props) {
   const [loading, setLoading] = useState(() => {
     if (typeof window !== 'undefined') {
       const element = document.querySelector('#mood-select-full');
+      console.log(element);
       console.log(getComputedStyle(element));
     }
     return true;
