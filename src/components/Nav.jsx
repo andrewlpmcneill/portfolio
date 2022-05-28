@@ -148,7 +148,7 @@ export default function Nav(props) {
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(() => {
     if (typeof window !== 'undefined') {
-      const element = document.getElementById('mood-select-full');
+      const element = document.querySelector('#mood-select-full');
       console.log(getComputedStyle(element));
     }
     return true;
