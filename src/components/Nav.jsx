@@ -129,6 +129,7 @@ const colourStyles = {
 };
 
 const mobileMoodsMap = {
+  Euphoria: "drupe",
   euphoria: "drupe",
   drupe: "mar caribe",
   marcaribe: "viking",
