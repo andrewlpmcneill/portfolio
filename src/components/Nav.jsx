@@ -3,9 +3,11 @@ import { useState } from 'react';
 import { AiFillGithub, AiFillLinkedin } from 'react-icons/ai';
 import Dropdown from './Nav.Dropdown';
 import Hamburger from './Nav.Hamburger';
-import { Header, Navbar, Div, HamburgerWrapper, TitleLink, Link, LinkIcon, H1, H2, Span, NavbarWrapper } from './Nav.styles';
+import { Header, Navbar, Div, HamburgerWrapper, TitleLink, Link, LinkIcon, H1, H2, Span, NavbarWrapper, ThemeButton } from './Nav.styles';
 import Select from 'react-select';
 import PulseLoader from 'react-spinners/PulseLoader';
+import ClipLoader from 'react-spinners/ClipLoader';
+import './Nav.css';
 
 const moods = {
   Euphoria: {
@@ -126,6 +128,15 @@ const colourStyles = {
   })
 };
 
+const mobileMoodsMap = {
+  euphoria: "drupe",
+  drupe: "mar caribe",
+  marcaribe: "viking",
+  viking: "opa",
+  opa: "dusk",
+  dusk: "euphoria",
+}
+
 export default function Nav(props) {
 
   const {
@@ -135,11 +146,19 @@ export default function Nav(props) {
   } = props;
 
   const [open, setOpen] = useState(false);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(() => {
+    const mediaQuery = window.matchMedia('(min-width: 767px)');
+    return mediaQuery.matches ? true : false;
+  });
+  const [loadingMobile, setLoadingMobile] = useState(() => {
+    const mediaQuery = window.matchMedia('(max-width: 766px)');
+    return mediaQuery.matches ? true : false;
+  })
 
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
+      setLoadingMobile(false);
     }, 700)
   }, []);
 
@@ -191,11 +210,11 @@ export default function Nav(props) {
               </H2>
             </Link>
             {loading 
-              ? <div style={{width: "156px", height: "38px", display: "flex", justifyContent: "center", alignItems: "center"}}>
+              ? <div  style={{width: "156px", height: "38px", display: "flex", justifyContent: "center", alignItems: "center"}}>
                   <PulseLoader size={10} loading={true} color={"#f3f4f6"} />
                 </div>
               : <Select
-                  id="mood-select"
+                  id="mood-select-full"
                   options={options}
                   defaultValue={{
                     value: mood,
@@ -213,6 +232,23 @@ export default function Nav(props) {
                   styles={colourStyles}
                   isSearchable={false}
                 />
+            }
+            {loadingMobile
+              ? <div  style={{width: "1.5rem", height: "1.5rem", display: "flex", justifyContent: "center", alignItems: "center"}}>
+                  <ClipLoader size={16} loading={true} color={"#f3f4f6"} />
+                </div>
+              : <ThemeButton
+                  id="mood-select-mobile"
+                  mood={mood}
+                  onClick={() => {
+                    mood
+                      ? mood === "mar caribe"
+                        ? setMood(mobileMoodsMap['marcaribe'])
+                        : setMood(mobileMoodsMap[mood])
+                      : console.log('no mood state')
+                  }}
+                />
+
             }
             <LinkIcon
               href='https://github.com/andrewlpmcneill'
