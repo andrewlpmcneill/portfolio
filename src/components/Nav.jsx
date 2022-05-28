@@ -147,21 +147,12 @@ export default function Nav(props) {
 
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(() => {
-    return setTimeout(() => {
-      return true;
-    }, 300)
+    console.log('does this work?', document.getElementById('mood-select-full').style.display);
+    return true;
   });
-  const [loadingMobile, setLoadingMobile] = useState(() => {
-    return setTimeout(() => {
-      return true;
-    }, 300)
-  });
+  const [loadingMobile, setLoadingMobile] = useState(true)
 
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const mediaQuery = window.matchMedia('(min-width: 767px)');
-      mediaQuery.matches ? setLoadingMobile(false) : setLoading(false);
-    }
     setTimeout(() => {
       setLoading(false);
       setLoadingMobile(false);
